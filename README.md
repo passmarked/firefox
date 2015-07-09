@@ -1,4 +1,4 @@
-# Passmarked Chrome Extension (In Development)
+# Passmarked Firefox Extension (experimental)
 
 The Passmarked Firefox Add-on anonymously queries the Passmarked API while the user visits their favourite sites. Showing the score in the address bar for quick reference.
 
