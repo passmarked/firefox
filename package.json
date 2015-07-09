@@ -1,0 +1,15 @@
+{
+  "title": "Passmarked",
+  "homepage": "http://passmarked.com",
+  "icon": "data/icon48.png",
+  "name": "passmarked",
+  "version": "0.0.1",
+  "description": "The realtime best practice score for the internet",
+  "main": "index.js",
+  "author": "Passmarked Inc",
+  "engines": {
+    "firefox": ">=38.0a1",
+    "fennec": ">=38.0a1"
+  },
+  "license": "Apache"
+}
