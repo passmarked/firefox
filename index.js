@@ -139,7 +139,7 @@ function handleIconClick(url_str) {
 		// open up the tabs
 		tabs.open("http://passmarked.com/dawg?source=firefox.ext&url=" + encodeURIComponent(url_str)) 
 
-	else {
+	} else {
 
 		// open up the tabs
 		tabs.open("https://api.passmarked.com/redirect?url=" + encodeURIComponent(url_str)) 
@@ -168,11 +168,22 @@ function showIcon(tab, score) {
 	}
 
 	// pick a badge to use
-	var badge_path_str = self.data.url('logo.png');
+	var badge_path_str = self.data.url('faces/face.png');
 
 	// check for a score
-	/* if( Math.floor(score) > 0 )
-		badge_path_str = self.data.url('scores/' + Math.floor(score) + '.png'); */
+	if( Math.floor(score) > 0 ) {
+
+		// convert to string
+		var score_str = '' + Math.floor(score).toString();
+
+		// add padding if needed
+		if(score_str.length == 1)
+			score_str = '0' + score_str;
+
+		// set the final path
+		badge_path_str = self.data.url('faces/' + score_str + '.png');
+
+	}
 
 	// create the button
 	var urlBarIcons = doc.getElementById('urlbar-icons')
@@ -271,6 +282,7 @@ function handleTabEvent(tab) {
 **/
 tabs.on("onPageShow", handleTabEvent);
 tabs.on("ready", handleTabEvent);
+tabs.on("activate", handleTabEvent);
 
 // show a install notice
 installNotice();
