@@ -99,7 +99,7 @@ function getReportInfoByURL(url_str, fn) {
 		if(!result) {
 
 			Request({
-			  url: "https://api.passmarked.com/query?domain=" + hostname_str,
+			  url: "https://api.passmarked.com/v1/query?domain=" + hostname_str,
 			  onComplete: function (response) {
 
 			    // start our response
@@ -142,7 +142,7 @@ function handleIconClick(url_str) {
 	} else {
 
 		// open up the tabs
-		tabs.open("https://api.passmarked.com/redirect?url=" + encodeURIComponent(url_str)) 
+		tabs.open("https://api.passmarked.com/v1/redirect?url=" + encodeURIComponent(url_str)) 
 
 	}
 
